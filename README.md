@@ -8,6 +8,6 @@ Great! ...er, wait. Wasn't there a Long Island Sound? Didn't the Florida Keys us
 
 What's going on? The main TIGER files contain both land *and territorial waters* of each state. That's not usually what we have in mind.
 
-The Census does have some land-only borders, however, in the [Cartographic Boundary Files](https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html). The state versions of those are presented here (at 20m, 5m, and 500k resolutions) in shapefile, geojson, and topojson formats.
+The Census does have some land-only borders, however, in the [Cartographic Boundary Files](https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html). The state versions of those are presented here (at 20m, 5m, and 500k resolutions) in shapefile, geojson, and topojson formats, and rendered into SVG and Adobe Illustrator files (using an Albers projection with modified positions for Alaska and Hawaii).
 
 Enjoy!
