@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Builder</title>
+  <script src="bower_components/d3/d3.js" charset="utf-8"></script>
+  <script src="bower_components/topojson/topojson.js"></script>
+  <style>
+    #map {
+      width: 960px;
+      height: 640px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    var w = 960; var h= 640;
+    var svg = d3.select('#map').append('svg')
+      .attr('width', w)
+      .attr('height', h);
+
+    d3.json('../../500k/gz_2010_us_040_00_500k.topojson', function(error, data) {
+      window.data = data;
+
+      var projection = d3.geo.albersUsa()
+        .scale(1000)
+        .translate([w/2, h/2]);
+
+      var pathFn = d3.geo.path()
+        .projection(projection);
+
+      svg.selectAll('.state')
+        .data(topojson.feature(data, data.objects.gz_2010_us_040_00_500k).features)
+        .enter().append('path')
+        .attr('class', 'state')
+        .attr('d', pathFn);
+
+    });
+  </script>
+</body>
+</html>
